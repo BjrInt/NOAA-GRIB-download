@@ -1,0 +1,11 @@
+{
+  "host": "www.ftp.ncep.noaa.gov",
+  "path": "/data/nccf/com/wave/prod/multi_1.%DATE%/multi_1.glo_30m.t00z.f%FC%.grib2",
+  "meta": {
+    "forecast": 1,
+    "UTC_offset": -6,
+    "global": true,
+    "hasInventory": true,
+    "agency": "NOAA"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "host": "www.ftp.ncep.noaa.gov",
+  "path": "/data/nccf/com/gfs/prod/gfs.%DATE%%HOUR%/gfs.t%HOUR%z.pgrb2.%RESOLUTION%.f%FC%",
+  "meta": {
+    "runtime": [0, 6, 12, 18],
+    "forecast": 6,
+    "UTC_offset": -6,
+    "global": true,
+    "hasInventory": true,
+    "agency": "NOAA"
+  }
+}
