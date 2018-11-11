@@ -35,6 +35,29 @@ Get the inventory for the most recent GFS run and replaces VARS with their plain
 
 If you need to download GRIB files programmatically you'll most probably need to use the end to end function. It is a wrapper around the inventory and range-download query which gives you a single-hit download option.
 
+#### Example
+```
+const end2end = require('./lib/e2e.js')
+const GFS = require('./lib/models/GFS.json')
+
+e2e(GFS,
+    ['PRES:surface', 'MSLET:mean sea','HGT:surface'],
+    '2012121200',
+    '0-24',
+    {})
+```
+
+#### API
+```
+void e2e(model, grids, date, forecastRange, options)
+```
+
+| Argument   |      Description      | Example
+|----------| ------------- |
+| model | A JSON containing the model description, models are located in the `lib/models` directory | (see lib/models/GFS.json for example) |
+| grids | An array containing the grids to fetch in the inventory   | `['UGRD:10 m', 'VGRD:10 m']` will give you U and V component of wind at 10m above ground |
+| date | A `YYYYMMDD` or `YYYYMMDDHH` string. If HH is not specified, fallbacks to 00h. | `2018010100` January 1st, 2018 at 00h00 UTC |
+| forecast | A forecast range, downloads every available forecast within that range <br> * x-y -> x TO y hours ahead<br> * x,y -> x AND y hours ahead<br> * x -> x hours ahead | |
 
 # Dependencies
 
