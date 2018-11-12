@@ -85,6 +85,7 @@ void e2e(model, grids, date, forecastRange, options)
 | afterDump        | (function) Callback function to execute once the grib file has been dumped to JSON. The function argument is the path to the JSON dump | `() => null`                                                 |
 | logFunction      | (function) A logging function to detail the download process. Set this to a null function to execute the process "quietly" or use a custom logger if you need to outsource the output | `console.log` |
 
+
 ### Helpers (lib/helpers.js)
 A set of lower level helpers, used by the end to end function. Might be useful to someone, look at the source code if you want more granularity over the download process...
 
