@@ -52,7 +52,7 @@ e2e(GFS,
 void e2e(model, grids, date, forecastRange, options)
 ```
 
-| Argument | Description                                                                                                                                                             | Example |                                                                                                                                   |
+| Argument | Description                                                                                                                                                             | Example                                                                                                                                     |
 |:---------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | model    | (object) A model description, models are located in the `lib/models` directory                                                                                          | (see lib/models/GFS.json for example)                                                                                                       |
 | grids    | (array) An array containing the grids to fetch in the inventory                                                                                                         | `['UGRD:10 m', 'VGRD:10 m']` will give you U and V component of wind at 10m above ground                                                    |
