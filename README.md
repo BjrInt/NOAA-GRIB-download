@@ -52,13 +52,13 @@ e2e(GFS,
 void e2e(model, grids, date, forecastRange, options)
 ```
 
-| Argument | Description      | Example                                                                                                                                                                                                                                                                                            |
-|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| model    | (object) A model description, models are located in the `lib/models` directory | (see lib/models/GFS.json for example)                                                                                                                                                                                                |
-| grids    | (array) An array containing the grids to fetch in the inventory   | `['UGRD:10 m', 'VGRD:10 m']` will give you U and V component of wind at 10m above ground                                                                                                                                                          |
-| date     | (str) A `YYYYMMDD` or `YYYYMMDDHH` string. If HH is not specified, fallbacks to 00h. | `2018010100` January 1st, 2018 at 00h00 UTC                                                                                                                                                                                    |
+| Argument | Description                                                                                                                                                             | Example |                                                                                                                                   |
+|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| model    | (object) A model description, models are located in the `lib/models` directory                                                                                          | (see lib/models/GFS.json for example)                                                                                                       |
+| grids    | (array) An array containing the grids to fetch in the inventory                                                                                                         | `['UGRD:10 m', 'VGRD:10 m']` will give you U and V component of wind at 10m above ground                                                    |
+| date     | (str) A `YYYYMMDD` or `YYYYMMDDHH` string. If HH is not specified, fallbacks to 00h.                                                                                    | `2018010100` January 1st, 2018 at 00h00 UTC                                                                                                 |
 | forecast | (str) A forecast range, downloads every available forecast within that range <br> * x-y -> x TO y hours ahead<br> * x,y -> x AND y hours ahead<br> * x -> x hours ahead | `0-12` Downloads the next 12 hours of forecast<br> `6,18` Downloads 6 hours ahead and 18 hours ahead<br> `32` Only downloads 32 hours ahead |
-| options  | (object) An object containing miscelanous download options (see below) |   `{ resolution: '0p50' }`                                                                                                                                                                                                                   |
+| options  | (object) An object containing miscelanous download options (see below)                                                                                                  | `{ resolution: '0p50' }`                                                                                                                    |
 
 ##### options
 ```
@@ -74,16 +74,16 @@ void e2e(model, grids, date, forecastRange, options)
 }
 ```
 
-| Argument         | Description      | Default value                                                                                                                                                                      |
-|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| resolution       | (str) Number of values per degree. Valid resolution are :<br> `0p25` (4p/°, high-res), `0p50` (2p/°), `1p00` (1p/°, low-res | `1p00`                                                                  |
-| prefixFilename   | (str) Prefix the output file with the given string | `''` (empty string)                                                                                                                              |
-| squashForecast   | (bool) If set to true, filename's date will be incremented with the forecast value. Ex.:<br> `2018011206 + 42h forecast` will result in `2018011400` | `'true'`                                       |
-| dumpToJSON       | (bool) Dump the downloaded grb to JSON using eccodes. Set this to false if you don't have eccodes installed | `'true'`                                                                                |
-| deleteTmpGRBFile | (bool) Deletes the original GRIB file once it has been dumped to JSON. | `'true'`                                                                                                                     |
-| afterDownload    | (function) Callback function to execute once the grib file has been downloaded from NOAA's servers. The function argument is the path to the downloaded file | `() => null`                           |
-| afterDump        | (function) Callback function to execute once the grib file has been dumped to JSON. The function argument is the path to the JSON dump | `() => null`                                                 |
-| logFunction      | (function) A logging function to detail the download process. Set this to a null function to execute the process "quietly" or use a custom logger if you need to outsource the output | `console.log` |
+| Argument         | Description                                                                                                                                                                           | Default value       |
+|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
+| resolution       | (str) Number of values per degree. Valid resolution are :<br> `0p25` (4p/°, high-res), `0p50` (2p/°), `1p00` (1p/°, low-res                                                           | `1p00`              |
+| prefixFilename   | (str) Prefix the output file with the given string                                                                                                                                    | `''` (empty string) |
+| squashForecast   | (bool) If set to true, filename's date will be incremented with the forecast value. Ex.:<br> `2018011206 + 42h forecast` will result in `2018011400`                                  | `'true'`            |
+| dumpToJSON       | (bool) Dump the downloaded grb to JSON using eccodes. Set this to false if you don't have eccodes installed                                                                           | `'true'`            |
+| deleteTmpGRBFile | (bool) Deletes the original GRIB file once it has been dumped to JSON.                                                                                                                | `'true'`            |
+| afterDownload    | (function) Callback function to execute once the grib file has been downloaded from NOAA's servers. The function argument is the path to the downloaded file                          | `() => null`        |
+| afterDump        | (function) Callback function to execute once the grib file has been dumped to JSON. The function argument is the path to the JSON dump                                                | `() => null`        |
+| logFunction      | (function) A logging function to detail the download process. Set this to a null function to execute the process "quietly" or use a custom logger if you need to outsource the output | `console.log`       |
 
 
 ### Helpers (lib/helpers.js)
