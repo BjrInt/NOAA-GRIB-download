@@ -1,7 +1,11 @@
 # What's this ?
+
 I was looking for a quick and simple way to download NOAA [GRIB files](https://en.wikipedia.org/wiki/GRIB) using JavaScript.
 
 I stumbled upon [this page](http://www.cpc.ncep.noaa.gov/products/wesley/fast_downloading_grib.html) stating `If You are Lucky, it is Simple`. TL;DR: It's just a NodeJS rewrite. It does not require cURL and has many default argument to work out of the box.
+
+## Changelog:
+- **FIX** *September 24th 2021* : Updated the GFS path
 
 ## Tools
 ### CLI
