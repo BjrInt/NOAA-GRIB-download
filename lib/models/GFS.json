@@ -1,6 +1,6 @@
 {
   "host": "www.ftp.ncep.noaa.gov",
-  "path": "/data/nccf/com/gfs/prod/gfs.%DATE%/%HOUR%/gfs.t%HOUR%z.pgrb2.%RESOLUTION%.f%FC%",
+  "path": "/data/nccf/com/gfs/prod/gfs.%DATE%/%HOUR%/atmos/gfs.t%HOUR%z.pgrb2.%RESOLUTION%.f%FC%",
   "meta": {
     "runtime": [0, 6, 12, 18],
     "forecast": 6,
